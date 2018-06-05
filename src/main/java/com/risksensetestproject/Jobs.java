@@ -17,6 +17,7 @@ public class Jobs implements Serializable {
     private String country;
     private String availabilty;
     private String description;
+    private String jobid;
 
     public Jobs(String name, String payrate, String jobtype, String explevel, String country, String availabilty, String description) {
         this.name = name;
@@ -86,25 +87,32 @@ public class Jobs implements Serializable {
         this.description = description;
     }
 
+    public String getJobid() {
+        return jobid;
+    }
 
+    public void setJobid(String jobid) {
+        this.jobid = jobid;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Jobs jobs = (Jobs) o;
-        return Objects.equals(getName(), jobs.getName()) &&
-                Objects.equals(getPayrate(), jobs.getPayrate()) &&
-                Objects.equals(getJobtype(), jobs.getJobtype()) &&
-                Objects.equals(getExplevel(), jobs.getExplevel()) &&
-                Objects.equals(getCountry(), jobs.getCountry()) &&
-                Objects.equals(getAvailabilty(), jobs.getAvailabilty()) &&
-                Objects.equals(getDescription(), jobs.getDescription());
+        return Objects.equals(name, jobs.name) &&
+                Objects.equals(payrate, jobs.payrate) &&
+                Objects.equals(jobtype, jobs.jobtype) &&
+                Objects.equals(explevel, jobs.explevel) &&
+                Objects.equals(country, jobs.country) &&
+                Objects.equals(availabilty, jobs.availabilty) &&
+                Objects.equals(description, jobs.description) &&
+                Objects.equals(jobid, jobs.jobid);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(getName(), getPayrate(), getJobtype(), getExplevel(), getCountry(), getAvailabilty(), getDescription());
+        return Objects.hash(name, payrate, jobtype, explevel, country, availabilty, description, jobid);
     }
 }
