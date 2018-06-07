@@ -31,7 +31,7 @@ public class RestAPI extends AbstractVerticle {
 
         httpServer
                 .requestHandler(router::accept)
-                .listen(3306);
+                .listen(2181);
 
     }
 
@@ -39,4 +39,16 @@ public class RestAPI extends AbstractVerticle {
         //begin the app
         new RestAPI().start();
     }
+
+    public static String searchAPI(){
+        /*  Take in the search criteria from the UI.
+            break apart the passed search criteria
+            process through the passed information and translate it to
+            the SQL search query
+            return the results
+
+        */
+    }
+
 }
+
