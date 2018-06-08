@@ -6,6 +6,12 @@ import java.util.Objects;
 /**
  * @author seanr on 6/5/2018.
  * @project test-project
+ *
+ * This is the implementation for the jobs
+ * Each job needs a name description and JobID
+ * JobID is set by the the user who submits the job
+ *
+ *
  */
 
 public class Jobs implements Serializable {
@@ -15,7 +21,7 @@ public class Jobs implements Serializable {
     private String jobtype;
     private String explevel;
     private String country;
-    private String availabilty;
+    private String availability;
     private String description;
     private String jobid;
 
@@ -25,7 +31,7 @@ public class Jobs implements Serializable {
         this.jobtype = jobtype;
         this.explevel = explevel;
         this.country = country;
-        this.availabilty = availabilty;
+        this.availability = availability;
         this.description = description;
     }
 
@@ -72,11 +78,11 @@ public class Jobs implements Serializable {
     }
 
     public String getAvailabilty() {
-        return availabilty;
+        return availability;
     }
 
-    public void setAvailabilty(String availabilty) {
-        this.availabilty = availabilty;
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 
     public String getDescription() {
@@ -105,7 +111,7 @@ public class Jobs implements Serializable {
                 Objects.equals(jobtype, jobs.jobtype) &&
                 Objects.equals(explevel, jobs.explevel) &&
                 Objects.equals(country, jobs.country) &&
-                Objects.equals(availabilty, jobs.availabilty) &&
+                Objects.equals(availability, jobs.availability) &&
                 Objects.equals(description, jobs.description) &&
                 Objects.equals(jobid, jobs.jobid);
     }
@@ -113,6 +119,6 @@ public class Jobs implements Serializable {
     @Override
     public int hashCode() {
 
-        return Objects.hash(name, payrate, jobtype, explevel, country, availabilty, description, jobid);
+        return Objects.hash(name, payrate, jobtype, explevel, country, availability, description, jobid);
     }
 }
