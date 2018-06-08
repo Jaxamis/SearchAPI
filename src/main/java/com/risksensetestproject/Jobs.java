@@ -25,7 +25,7 @@ public class Jobs implements Serializable {
     private String description;
     private String jobid;
 
-    public Jobs(String name, String payrate, String jobtype, String explevel, String country, String availabilty, String description) {
+    public Jobs(String name, String payrate, String jobtype, String explevel, String country, String availability, String description) {
         this.name = name;
         this.payrate = payrate;
         this.jobtype = jobtype;
